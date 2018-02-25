@@ -1,0 +1,18 @@
+{
+	"comment": "",
+	"heroku": {
+		"goVersion": "go1.9.4",
+		"install": [
+			"./..."
+		],
+		"sync": false
+	},
+	"ignore": "test",
+	"package": [
+		{
+			"path": "gorilla/mux",
+			"revision": ""
+		}
+	],
+	"rootPath": "github.com/sowjumn/web-net-http-go"
+}
