@@ -2,13 +2,12 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"net/http"
 	"os"
 )
 
 func helloHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "hello world \n")
+	http.ServeFile(w, req, "home.html")
 }
 
 func homeHandler(w http.ResponseWriter, req *http.Request) {
