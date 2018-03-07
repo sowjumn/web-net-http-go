@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"os"
 )
@@ -13,16 +12,16 @@ func helloServer(w http.ResponseWriter, req *http.Request) {
 }
 
 func homeHandler(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "Welcome Home!")
+	fmt.Fprint(w, "Welcome Home!")
 }
 
 func main() {
 	http.HandleFunc("/", homeHandler)
-	http.HandleFunc("/hello", helloServer)
+	http.HandleFunc("/hello", helloHandler)
 
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 	}
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	http.ListenAndServe(":"+port, nil)
 }
