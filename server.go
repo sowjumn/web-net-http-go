@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func helloServer(w http.ResponseWriter, req *http.Request) {
+func helloHandler(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "hello world \n")
 }
 
